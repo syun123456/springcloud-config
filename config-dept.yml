@@ -1,0 +1,61 @@
+spring:
+  profiles:
+    active: dev
+
+---
+server:
+  port: 8001
+
+mybatis:
+  type-aliases-package: com.syun.pojo
+  config-location: classpath:mybatis/mybatis_config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  
+spring:
+  profiles: dev
+  application:
+    name: springcloud-config-dept-dev
+  datasource:
+    username: test
+    password: javatest
+    url: jdbc:sqlserver://0.0.0.0:1433;DatabaseName=SpringCloud01
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+  instance:
+    instance-id: springcloud-provider-dept-8001
+info:
+  app.name: syun_springcloud_learn
+  company.name: syun
+  
+---
+server:
+  port: 8002
+
+mybatis:
+  type-aliases-package: com.syun.pojo
+  config-location: classpath:mybatis/mybatis_config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  
+spring:
+  profiles: test
+  application:
+    name: springcloud-config-dept-test
+  datasource:
+    username: test
+    password: javatest
+    url: jdbc:sqlserver://0.0.0.0:1433;DatabaseName=SpringCloud02
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+  instance:
+    instance-id: springcloud-provider-dept-8002
+info:
+  app.name: syun_springcloud_learn
+  company.name: syun
