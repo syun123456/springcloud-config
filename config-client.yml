@@ -6,13 +6,13 @@ spring:
 server:
   port: 8201
 
-#spring°t¸m
+#springé…ç½®
 spring:
   profiles: dev
   application:
     name: springcloud-provider-dept-dev
     
-#Eureka°t¸m
+#Eurekaé…ç½®
 eureka:
   client:
     service-url:
@@ -22,13 +22,13 @@ eureka:
 server:
   port: 8202
 
-#spring°t¸m
+#springé…ç½®
 spring:
   profiles: test
   application:
     name: springcloud-provider-dept-test
     
-#Eureka°t¸m
+#Eurekaé…ç½®
 eureka:
   client:
     service-url:
